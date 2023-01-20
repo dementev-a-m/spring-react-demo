@@ -1,0 +1,15 @@
+databaseChangeLog:
+  -  changeSet:
+       id: 20221201_creata_customer_table
+       author: Anton
+       changes:
+         - sql:
+             sql: "create table customer
+                  (
+                      id         bigserial constraint customer_pk primary key,
+                      first_name  varchar not null,
+                      last_name  varchar,
+                      data       jsonb,
+                      created_time timestamp with time zone default now() not null
+                  );
+                  "
